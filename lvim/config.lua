@@ -7,14 +7,11 @@
 -- Toggle relative line number
 lvim.keys.normal_mode["<C-L><C-L>"] = ":set invrelativenumber<CR>"
 
+-- Disable tsserver
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "tsserver" })
+
 -- Automatically changed to pwd
 vim.opt.autochdir = true
-
--- Angular lsp
-local lsp_manager = require("lvim.lsp.manager").setup("angularls")
-lvim.plugins = {
-  { "nvim-treesitter/nvim-treesitter-angular" },
-}
 
 --format on save
 lvim.format_on_save.enabled = true
