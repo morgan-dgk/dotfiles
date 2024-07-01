@@ -8,6 +8,15 @@ lvim.plugins = {
   {
     "sindrets/diffview.nvim",
     event = "BufRead"
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require('nvim-ts-autotag').setup({ enable = true, filetypes = { "html" } })
+    end,
+    lazy = true,
+    event = "VeryLazy"
   }
 }
 
