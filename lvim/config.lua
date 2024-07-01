@@ -37,4 +37,4 @@ vim.opt.autochdir = true
 
 --format on save
 lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = { "*.lua", "*.py", "*.rs", "*.ts", "*.mjs", "*.js", "*.cjs" }
+lvim.format_on_save.pattern = { "*.lua", "*.py", "*.rs", "*.ts", "*.mjs", "*.js", "*.cjs", "*.html", "*.json" }
