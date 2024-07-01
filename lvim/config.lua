@@ -5,7 +5,6 @@
 
 
 lvim.plugins = {
-  { "HiPhish/rainbow-delimiters.nvim" },
   {
     "sindrets/diffview.nvim",
     event = "BufRead"
