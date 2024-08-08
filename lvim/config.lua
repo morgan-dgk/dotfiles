@@ -17,7 +17,15 @@ lvim.plugins = {
     end,
     lazy = true,
     event = "VeryLazy"
+  },
+  {
+    "max397574/colortils.nvim",
+    cmd = "Colortils",
+    config = function()
+      require("colortils").setup()
+    end,
   }
+
 }
 
 vim.opt.fillchars = { fold = " ", }
