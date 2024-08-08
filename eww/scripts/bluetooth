@@ -1,0 +1,25 @@
+#!/bin/sh
+
+symbol() {
+  isPowered=$(bluetoothctl show | grep Powered | awk -F ': ' '{print $2}')
+  deviceConnected=$(bluetoothctl devices Connected) 
+
+  if [ "$isPowered" = "yes" ] && [ "$deviceConnected" ]; then
+    icon=󰂱 
+  elif [ "$isPowered" = "yes" ]; then
+    icon=󰂯
+  else
+    icon=󰂲 
+  fi
+  echo "$icon"
+}
+
+name() {
+  bluetoothctl devices Connected | cut -d " " -f 3-
+}
+
+[ "$1" = "icon" ] && symbol && exit
+[ "$1" = "name" ] && name && exit
+
+
+
