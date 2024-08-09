@@ -24,8 +24,9 @@ lvim.plugins = {
     config = function()
       require("colortils").setup()
     end,
-  }
-
+  },
+  { "elkowar/yuck.vim" },
+  { "eraserhd/parinfer-rust", build = "cargo build --release" }
 }
 
 vim.opt.fillchars = { fold = " ", }
