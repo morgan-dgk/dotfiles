@@ -1,0 +1,11 @@
+(defpoll wifi-icon :interval "1s" "widgets/scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "widgets/scripts/wifi name")
+
+(defwidget wifi []
+  (box :orientation "v"  
+			 :tooltip wifi-name
+       	  (label :text wifi-icon )
+  )
+)
+
+

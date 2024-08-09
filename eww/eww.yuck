@@ -1,6 +1,9 @@
+(include "./widgets/bluetooth.yuck")
+(include "./widgets/wifi.yuck")
+
 (defwindow toplevel 
   :monitor 1
-  :geometry (geometry :x "0" 
+  :geometry (geometry :x "1%" 
                       :y "0"
                       :width "2%"
                       :height "50%"
@@ -9,33 +12,26 @@
   (statusbar)
 )
 
-(defwidget wifi []
-  (box :orientation "v"  
-			 :tooltip wifi-name
-	  (button :class "wifi-icon" wifi-icon)
-  )
-)
 
-(defwidget bluetooth []
+
+
+(defwidget power []
   (box :orientation "v"
-       :tooltip bluetooth-device
-    (button bluetooth-icon)
+    (label :text "󰐥")
   )
 )
 
-(defpoll bluetooth-icon :interval "1s" "scripts/bluetooth icon")
-(defpoll bluetooth-device :interval "1s" "scripts/bluetooth name")
 
-(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
-(defpoll wifi-name :interval "1s" "scripts/wifi name")
 
 
 (defwidget statusbar []
  (box :class "statusbar" 
       :orientation "v" 
-      :space-evenly "false"
+      :valign "center"
+      :space-evenly "true"
   (wifi)
-  (bluetooth)) 
+  (bluetooth)
+  (power)) 
 )
 
 
