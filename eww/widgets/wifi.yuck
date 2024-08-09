@@ -1,11 +1,9 @@
-(defpoll wifi-icon :interval "1s" "widgets/scripts/wifi icon")
-(defpoll wifi-name :interval "1s" "widgets/scripts/wifi name")
-
-(defwidget wifi []
+(defwidget wifi [state ?ssid icon_disabled icon_nonetwork icon_connected]
   (box :orientation "v"  
-			 :tooltip wifi-name
-       	  (label :text wifi-icon )
-  )
-)
+             :tooltip ssid 
+             (label :text {state == "disabled" ? icon_disabled : 
+                           ssid == "" ? icon_nonetwork :  icon_connected})))
+  
+
 
 

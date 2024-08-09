@@ -1,5 +1,7 @@
 (include "./widgets/bluetooth.yuck")
 (include "./widgets/wifi.yuck")
+(defpoll wifi-state :interval "1s" "widgets/scripts/wifi state")
+(defpoll ssid :interval "1s" "widgets/scripts/wifi ssid")
 
 (defwindow toplevel 
   :monitor 1
@@ -29,7 +31,7 @@
       :orientation "v" 
       :valign "center"
       :space-evenly "true"
-  (wifi)
+  (wifi :state wifi-state :ssid ssid :icon_disabled "󰀝" :icon_nonetwork "󰖪" :icon_connected "󰖩 ")
   (bluetooth)
   (power)) 
 )
