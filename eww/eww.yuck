@@ -1,15 +1,19 @@
+;; IMPORTS
 (include "./widgets/bluetooth.yuck")
 (include "./widgets/wifi.yuck")
 (include "./widgets/power.yuck")
 (include "./widgets/clock.yuck")
 (include "./widgets/kblayout.yuck")
 
+;; CONSTANTS
 (defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
-(defpoll kblayout :interval "1s" "widgets/scripts/kblayout active")
 
+;; STATE
+(defpoll kblayout :interval "1s" "widgets/scripts/kblayout active")
 (defpoll wifi-state :interval "1s" "widgets/scripts/wifi state")
 (defpoll ssid :interval "1s" "widgets/scripts/wifi ssid")
 
+;; CONFIG 
 (defwindow toplevel 
   :monitor 1
   :geometry (geometry :x "1%" 
@@ -19,8 +23,6 @@
                       :anchor "left center")
   :exclusive "true"
   (statusbar))
-
-
 
 (defwidget statusbar []
  (box :class "statusbar" 
