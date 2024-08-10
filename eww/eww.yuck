@@ -1,5 +1,6 @@
 (include "./widgets/bluetooth.yuck")
 (include "./widgets/wifi.yuck")
+(include "./widgets/clock.yuck")
 (include "./widgets/kblayout.yuck")
 
 (defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
@@ -38,4 +39,5 @@
       :space-evenly "true"
   (wifi :state wifi-state :ssid ssid :icon_disabled "󰀝" :icon_nonetwork "󰖪" :icon_connected "󰖩 ")
   (bluetooth)
+  (clock)
   (kb_indicator :current_layout kblayout :layouts LAYOUTS)))
