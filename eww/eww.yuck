@@ -4,11 +4,19 @@
 (include "./widgets/power.yuck")
 (include "./widgets/clock.yuck")
 (include "./widgets/kblayout.yuck")
+(include "./widgets/battery.yuck")
 
 ;; CONSTANTS
 (defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
 (defvar BT_ICONS "{\"connected\": \"󰂱 \", \"on\": \"󰂯\", \"off\": \"󰂲\"}")
 (defvar WIFI_ICONS "{\"disabled\": \"󰀝\", \"nonetwork\": \"󰖪\", \"connected\": \"󰖩\"}")
+
+(defvar BATTERY_ICONS "{\"Charging\": \"󰂄\", \"Critical\":\"󰂃\", \"20%\": \"󰁻\", \"30%\": \"󰁼\", 
+                        \"40%\": \"󰁽\", \"50%\": \"󰁾\", \"60%\": \"󰁿\", \"70%\": \"󰂀\", \"80%\": \"󰂁\", 
+                        \"90%\": \"󰂂\", \"Charged\": \"󰁹\"}")
+
+(defvar BATTERY_CRITICAL_THRESHOLD 10)
+(defvar BATTERY_CHARGED_THRESHOLD 95)
 
 ;; STATE
 (defpoll kblayout :interval "1s" "widgets/scripts/kblayout active")
@@ -42,7 +50,12 @@
 (defwidget _bottom []
   (box :orientation "v"
        :valign "end"
-    (power)))
+    (power)
+    (_battery :status {EWW_BATTERY.BAT0.status} 
+              :percent {EWW_BATTERY.BAT0.capacity} 
+              :critical-threshold BATTERY_CRITICAL_THRESHOLD
+              :charged-threshold BATTERY_CHARGED_THRESHOLD
+              :icons BATTERY_ICONS)))
 
 (defwidget statusbar []
  (box :class "statusbar" 
