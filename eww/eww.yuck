@@ -1,5 +1,10 @@
 (include "./widgets/bluetooth.yuck")
 (include "./widgets/wifi.yuck")
+(include "./widgets/kblayout.yuck")
+
+(defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
+(defpoll kblayout :interval "1s" "widgets/scripts/kblayout active")
+
 (defpoll wifi-state :interval "1s" "widgets/scripts/wifi state")
 (defpoll ssid :interval "1s" "widgets/scripts/wifi ssid")
 
@@ -33,7 +38,4 @@
       :space-evenly "true"
   (wifi :state wifi-state :ssid ssid :icon_disabled "󰀝" :icon_nonetwork "󰖪" :icon_connected "󰖩 ")
   (bluetooth)
-  (power)) 
-)
-
-
+  (kb_indicator :current_layout kblayout :layouts LAYOUTS)))

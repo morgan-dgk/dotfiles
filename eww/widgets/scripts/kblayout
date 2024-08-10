@@ -1,0 +1,11 @@
+#!/bin/sh
+
+active() {
+  hyprctl devices -j | jq -r ".keyboards[] | select(.main == true) | .active_keymap"
+}
+
+[ "$1" = "active" ] && active && exit
+
+
+
+

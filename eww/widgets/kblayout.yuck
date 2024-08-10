@@ -1,0 +1,10 @@
+
+(defwidget kb_indicator [current_layout layouts]
+  (box :orientation "v"
+   {layouts[current_layout]}))
+
+
+
+
+
+
