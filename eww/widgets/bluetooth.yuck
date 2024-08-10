@@ -1,7 +1,7 @@
 (defwidget bluetooth [state ?device icons]
   (box :orientation "v"
        :tooltip device
-    (label :text {icons[state]})))
+    (label :class "bluetooth" :text {icons[state]})))
   
 
 

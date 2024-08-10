@@ -1,5 +1,44 @@
+$power: #f7768e;
+$wifi: #bb9af7;
+$battery: #9ece6a;
+$bluetooth: #7aa2f7;
+
+
 window {
-  background-color: #1a1b26;
   opacity: 1;
   border-radius: 30px;
+  font-family: "Essential Pragmata Pro";
+}
+
+button {
+  background: inherit;
+  border: none;
+}
+
+.top {
+  margin-top: 10px;
+}
+
+.bottom {
+  margin-bottom: 10px;
+}
+
+.power-control button {
+  color: inherit
+}
+
+.power-control {
+  color: $power;
+}
+
+.wifi {
+  color: $wifi
+}
+
+.battery {
+  color: $battery
+}
+
+.bluetooth {
+  color: $bluetooth
 }

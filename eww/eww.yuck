@@ -50,6 +50,9 @@
 (defwidget _bottom []
   (box :orientation "v"
        :valign "end"
+       :space-evenly "false"
+       :spacing 3
+       :class "bottom"
     (power)
     (_battery :status {EWW_BATTERY.BAT0.status} 
               :percent {EWW_BATTERY.BAT0.capacity} 
