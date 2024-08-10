@@ -1,7 +1,7 @@
 (defwidget wifi [state ?ssid icons]
   (box :orientation "v"  
-             :tooltip ssid 
-             (label :text {icons[state]})))
+       :tooltip ssid 
+    (label :text {icons[state]})))
   
 
 
