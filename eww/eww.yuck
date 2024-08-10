@@ -7,12 +7,15 @@
 
 ;; CONSTANTS
 (defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
+(defvar BT_ICONS "{\"connected\": \"󰂱 \", \"on\": \"󰂯\", \"off\": \"󰂲\"}")
 (defvar WIFI_ICONS "{\"disabled\": \"󰀝\", \"nonetwork\": \"󰖪\", \"connected\": \"󰖩\"}")
 
 ;; STATE
 (defpoll kblayout :interval "1s" "widgets/scripts/kblayout active")
 (defpoll wifi-state :interval "1s" "widgets/scripts/wifi state")
 (defpoll ssid :interval "1s" "widgets/scripts/wifi ssid")
+(defpoll bluetooth-state :interval "1s" "widgets/scripts/bluetooth state")
+(defpoll bluetooth-device :interval "1s" "widgets/scripts/bluetooth device")
 
 ;; CONFIG 
 (defwindow toplevel 
@@ -30,8 +33,8 @@
       :orientation "v" 
       :valign "center"
       :space-evenly "true"
-  (bluetooth)
   (wifi :state wifi-state :ssid ssid :icons WIFI_ICONS)
+  (bluetooth :state bluetooth-state :device bluetooth-device :icons BT_ICONS)
   (power)
   (clock)
   (kb_indicator :current_layout kblayout :layouts LAYOUTS)))

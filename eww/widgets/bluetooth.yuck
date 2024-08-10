@@ -1,11 +1,8 @@
-(defpoll bluetooth-icon :interval "1s" "widgets/scripts/bluetooth icon")
-(defpoll bluetooth-device :interval "1s" "widgets/scripts/bluetooth name")
-
-(defwidget bluetooth []
+(defwidget bluetooth [state ?device icons]
   (box :orientation "v"
-       :tooltip bluetooth-device
-    (label :text bluetooth-icon)
-  )
-)
+       :tooltip device
+    (label :text {icons[state]})))
+  
+
 
 
