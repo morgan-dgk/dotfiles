@@ -1,5 +1,6 @@
 (include "./widgets/bluetooth.yuck")
 (include "./widgets/wifi.yuck")
+(include "./widgets/power.yuck")
 (include "./widgets/clock.yuck")
 (include "./widgets/kblayout.yuck")
 
@@ -17,18 +18,7 @@
                       :height "50%"
                       :anchor "left center")
   :exclusive "true"
-  (statusbar)
-)
-
-
-
-
-(defwidget power []
-  (box :orientation "v"
-    (label :text "󰐥")
-  )
-)
-
+  (statusbar))
 
 
 
@@ -39,5 +29,6 @@
       :space-evenly "true"
   (wifi :state wifi-state :ssid ssid :icon_disabled "󰀝" :icon_nonetwork "󰖪" :icon_connected "󰖩 ")
   (bluetooth)
+  (power)
   (clock)
   (kb_indicator :current_layout kblayout :layouts LAYOUTS)))
