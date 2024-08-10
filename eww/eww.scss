@@ -2,12 +2,15 @@ $power: #f7768e;
 $wifi: #bb9af7;
 $battery: #9ece6a;
 $bluetooth: #7aa2f7;
-
+$background: #1a1b26;
+$clock: #A8AFD5;
 
 window {
+  font-size: 15px;
   opacity: 1;
   border-radius: 30px;
   font-family: "Essential Pragmata Pro";
+  background: $background;
 }
 
 button {
@@ -41,4 +44,9 @@ button {
 
 .bluetooth {
   color: $bluetooth
+}
+
+.clock {
+  color: $clock;
+  font-family: Essential Pragmat Pro Bold;
 }

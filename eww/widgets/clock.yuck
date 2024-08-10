@@ -2,7 +2,7 @@
   (box :orientation "v" 
     (label :text {formattime(EWW_TIME,"%H%n%M")}
            :tooltip {formattime(EWW_TIME, '%a. %d %B')}
-           :class "time")))
+           :class "clock")))
  
 
  
