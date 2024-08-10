@@ -28,15 +28,27 @@
   :exclusive "true"
   (statusbar))
 
+(defwidget _top []
+ (box :orientation "v"
+      :valign "start"
+      :space-evenly "false"
+      :spacing 5 
+      :class "top" 
+    (kb_indicator :current_layout kblayout :layouts KB_LAYOUTS)
+    (clock) 
+    (wifi :state wifi-state :ssid ssid :icons WIFI_ICONS)
+    (bluetooth :state bluetooth-state :device bluetooth-device :icons BT_ICONS)))
+
+(defwidget _bottom []
+  (box :orientation "v"
+       :valign "end"
+    (power)))
+
 (defwidget statusbar []
  (box :class "statusbar" 
-      :orientation "v" 
-      :valign "center"
-      :space-evenly "true"
-  (wifi :state wifi-state :ssid ssid :icons WIFI_ICONS)
-  (bluetooth :state bluetooth-state :device bluetooth-device :icons BT_ICONS)
-  (power)
-  (clock)
-  (kb_indicator :current_layout kblayout :layouts LAYOUTS)))
+            :orientation "v" 
+    (_top)
+    (label :text "middle")
+    (_bottom)))
 
 
