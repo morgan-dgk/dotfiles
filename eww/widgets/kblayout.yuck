@@ -1,6 +1,7 @@
 
 (defwidget kb_indicator [current_layout layouts]
   (box :orientation "v"
+       :tooltip current_layout
    {layouts[current_layout]}))
 
 
