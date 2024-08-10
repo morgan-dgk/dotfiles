@@ -7,8 +7,8 @@
 (include "./widgets/battery.yuck")
 
 ;; CONSTANTS
-(defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
-(defvar BT_ICONS "{\"connected\": \"󰂱 \", \"on\": \"󰂯\", \"off\": \"󰂲\"}")
+(defvar KB_LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
+(defvar BT_ICONS "{\"connected\": \"󰂱\", \"on\": \"󰂯\", \"off\": \"󰂲\"}")
 (defvar WIFI_ICONS "{\"disabled\": \"󰀝\", \"nonetwork\": \"󰖪\", \"connected\": \"󰖩\"}")
 
 (defvar BATTERY_ICONS "{\"Charging\": \"󰂄\", \"Critical\":\"󰂃\", \"20%\": \"󰁻\", \"30%\": \"󰁼\", 
@@ -42,8 +42,8 @@
       :space-evenly "false"
       :spacing 5 
       :class "top" 
-    (kb_indicator :current_layout kblayout :layouts KB_LAYOUTS)
     (clock) 
+    (kb_indicator :current_layout kblayout :layouts KB_LAYOUTS)
     (wifi :state wifi-state :ssid ssid :icons WIFI_ICONS)
     (bluetooth :state bluetooth-state :device bluetooth-device :icons BT_ICONS)))
 
