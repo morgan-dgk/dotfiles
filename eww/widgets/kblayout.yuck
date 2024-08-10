@@ -1,8 +1,8 @@
 
 (defwidget kb_indicator [current_layout layouts]
   (box :orientation "v"
-       :tooltip current_layout
-   {layouts[current_layout]}))
+       :class "kb"
+   (label :tooltip current_layout :text {layouts[current_layout]})))
 
 
 
