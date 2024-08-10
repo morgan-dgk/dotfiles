@@ -7,6 +7,7 @@
 
 ;; CONSTANTS
 (defvar LAYOUTS "{\"English (US)\": \"En\", \"English (intl., with AltGr dead keys)\": \"Alt\"}")
+(defvar WIFI_ICONS "{\"disabled\": \"󰀝\", \"nonetwork\": \"󰖪\", \"connected\": \"󰖩\"}")
 
 ;; STATE
 (defpoll kblayout :interval "1s" "widgets/scripts/kblayout active")
@@ -29,8 +30,10 @@
       :orientation "v" 
       :valign "center"
       :space-evenly "true"
-  (wifi :state wifi-state :ssid ssid :icon_disabled "󰀝" :icon_nonetwork "󰖪" :icon_connected "󰖩 ")
   (bluetooth)
+  (wifi :state wifi-state :ssid ssid :icons WIFI_ICONS)
   (power)
   (clock)
   (kb_indicator :current_layout kblayout :layouts LAYOUTS)))
+
+

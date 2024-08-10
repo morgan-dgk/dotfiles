@@ -1,8 +1,7 @@
-(defwidget wifi [state ?ssid icon_disabled icon_nonetwork icon_connected]
+(defwidget wifi [state ?ssid icons]
   (box :orientation "v"  
              :tooltip ssid 
-             (label :text {state == "disabled" ? icon_disabled : 
-                           ssid == "" ? icon_nonetwork :  icon_connected})))
+             (label :text {icons[state]})))
   
 
 

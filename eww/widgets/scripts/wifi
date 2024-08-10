@@ -1,7 +1,15 @@
 #!/bin/sh
 
 state() {
-  nmcli radio wifi
+  state=$(nmcli radio wifi)
+  connection=$(nmcli connection show --active | grep "wifi" | cut -d " " -f1)
+  if [ "$state" = "enabled" ] && [ "$connection" ]; then
+    echo connected
+  elif [ "$state" = "enabled" ]; then
+    echo nonetwork
+  else
+    echo disabled
+  fi
 }
 
 ssid() {
