@@ -27,7 +27,7 @@ button {
 }
 
 .power-control button {
-  color: inherit
+  color: inherit 
 }
 
 .power-control {
@@ -50,5 +50,12 @@ button {
   color: $clock;
 }
 
+.workspace-entry.occupied {
+  color: #E9E9ED
+}
+
+.workspace-entry.empty {
+  color: $clock
+}
 
 
