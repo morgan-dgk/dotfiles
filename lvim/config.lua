@@ -26,7 +26,13 @@ lvim.plugins = {
     end,
   },
   { "elkowar/yuck.vim" },
-  { "eraserhd/parinfer-rust", build = "cargo build --release" }
+  { "eraserhd/parinfer-rust", build = "cargo build --release" },
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    config = function()
+      require("mason-tool-installer").setup({ ensure_installed = { "eslint-lsp", "prettierd" } })
+    end
+  }
 }
 
 vim.opt.fillchars = { fold = " ", }
