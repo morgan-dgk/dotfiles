@@ -27,8 +27,8 @@
 (defpoll bluetooth-device :interval "1s" "widgets/scripts/bluetooth device")
 
 ;; CONFIG 
-(defwindow toplevel 
-  :monitor 1
+(defwindow toplevel [monitor]
+  :monitor monitor
   :geometry (geometry :x "1%" 
                       :y "0"
                       :width "2%"
