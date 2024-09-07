@@ -32,7 +32,15 @@ lvim.plugins = {
     config = function()
       require("mason-tool-installer").setup({ ensure_installed = { "eslint-lsp", "prettierd" } })
     end
-  }
+  },
+  {
+    "rbong/vim-flog",
+    lazy = true,
+    cmd = { "Flog", "Flogsplit", "Floggit" },
+    dependencies = {
+      "tpope/vim-fugitive",
+    },
+  },
 }
 
 vim.opt.fillchars = { fold = " ", }
