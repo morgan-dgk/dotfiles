@@ -3,7 +3,7 @@
     (label :tooltip "${percent}%" 
            :class "battery"
            :text {status == "Charging" ? icons["Charging"] :
-                    percent < critical-threshold ? icons["Critical"] :
+                    percent <= critical-threshold ? icons["Critical"] :
                        percent >= charged-threshold ? icons["Charged"] :
                          percent <= 29 ? icons["20%"] : 
                            percent <= 39 ? icons["30%"] :

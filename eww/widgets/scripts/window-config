@@ -1,0 +1,15 @@
+#!/bin/sh
+
+function getwindows {
+  num_monitors=$(hyprctl monitors -j | jq length)
+  echo "$num_monitors"
+
+  if [ "$num_monitors" -gt 1 ]; then
+   eww open toplevel --arg monitor=1 
+ else 
+   eww open toplevel --arg monitor=0
+  fi
+}
+
+getwindows
+
