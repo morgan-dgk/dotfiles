@@ -1,3 +1,5 @@
+-- Preview function definitions in a floating window: https://github.com/rmagatti/goto-preview
+
 return {
   "rmagatti/goto-preview",
   opts = {

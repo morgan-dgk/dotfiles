@@ -1,6 +1,6 @@
--- gh cli must be installed for this to function
---
+-- Plugin for managing Github PRs and Issues from Neovim: https://github.com/pwntester/octo.nvim
 
+-- gh cli must be installed for this to function
 if vim.fn.executable("gh") == 1 then
   return {
     'pwntester/octo.nvim',
